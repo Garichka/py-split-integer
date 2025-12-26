@@ -14,7 +14,10 @@ from app.split_integer import split_integer
         (100, 1, [100]),
     ]
 )
-def test_split_integer_basic_constraints(value: int, parts: int, expected: list) -> None:
+def test_split_integer_basic_constraints(
+        value: int,
+        parts: int,
+        expected: list) -> None:
     result = split_integer(value, parts)
     assert len(result) == parts
     assert sum(result) == value
