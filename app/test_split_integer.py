@@ -9,7 +9,7 @@ from app.split_integer import split_integer
         (10, 3, [3, 3, 4]),
         (16, 4, [4, 4, 4, 4]),
         (17, 5, [3, 3, 3, 4, 4]),
-        (3, 4, [0, 0, 1, 1, 1]),
+        (3, 4, [0, 1, 1, 1]),
         (0, 5, [0, 0, 0, 0, 0]),
         (100, 1, [100]),
     ]
@@ -19,6 +19,8 @@ def test_split_integer_basic_constraints(
         parts: int,
         expected: list) -> None:
     result = split_integer(value, parts)
+
+    assert result == expected
     assert len(result) == parts
     assert sum(result) == value
     assert result == sorted(result)
